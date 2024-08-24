@@ -9,45 +9,22 @@ A quick and easy setup for running Jupyter notebooks in a Dockerized environment
 - Simplified sharing of notebooks using the `work` directory.
 - Compatibility with GitHub Code Spaces for seamless remote development.
 
-## Getting Started
 
-Clone this repository to your local machine:
+### Instructions to Use the Script
 
-```bash
-git clone https://github.com/nezhar/jupyter-docker-compose.git
-```
+1. **Save the Script**: Save the above content to a file named `setup_jupyter.sh`.
 
-Navigate to the project root directory:
+2. **Make the Script Executable**: Open a terminal and navigate to the directory where `setup_jupyter.sh` is saved. Run the following command to make the script executable:
+   ```bash
+   chmod +x setup_jupyter.sh
+   ```
 
-```bash
-cd jupyter-docker-compose
-```
+3. **Run the Script**: Execute the script by running:
+   ```bash
+   ./setup_jupyter.sh
+   ```
 
-Build the the image for the Jupyter Notebook server:
-
-```bash
-docker-compose build
-```
-
-Start the Jupyter Notebook server:
-
-```bash
-docker-compose up
-```
-
-After running this command, the Jupyter Notebook server should be accessible at `http://localhost:8888`.
-
-## Using GitHub Code Spaces
-
-This setup can also be used with GitHub Code Spaces. All the necessary configuration is provided in the `devcontainer.json` file. Just open this repository in a new code space, and the environment will be ready to go.
-
-## Directory Structure
-
-- `./work`: This is the directory where you can add your Jupyter notebooks. It's mounted as a volume in the Docker container, so notebooks created and saved in the Jupyter Notebook IDE will persist here.
-
-## Notes
-
-The `requirements.txt` file is copied to the Docker container during the build process, and the Python dependencies listed within are installed. To add or update dependencies, modify this file, then rebuild the Docker image.
+This script will handle cloning the repository, navigating into it, building the Docker image, and starting the server. Make sure Docker and Docker Compose are installed and running on your machine before you execute the script.
 
 ## Contributions
 
